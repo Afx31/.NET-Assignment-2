@@ -34,6 +34,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.bLogin = new System.Windows.Forms.Button();
             this.bNewuser = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -67,7 +68,6 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(134, 20);
             this.tbPassword.TabIndex = 3;
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // bLogin
             // 
@@ -87,12 +87,23 @@
             this.bNewuser.TabIndex = 5;
             this.bNewuser.Text = "New User";
             this.bNewuser.UseVisualStyleBackColor = true;
+            this.bNewuser.Click += new System.EventHandler(this.bNewuser_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 235);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(259, 212);
+            this.listBox1.TabIndex = 6;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 461);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.bNewuser);
             this.Controls.Add(this.bLogin);
             this.Controls.Add(this.tbPassword);
@@ -115,5 +126,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button bLogin;
         private System.Windows.Forms.Button bNewuser;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

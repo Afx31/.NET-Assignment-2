@@ -15,21 +15,45 @@ namespace UserReputationSystem
         protected double averageRating;
         public double AverageRating;
 
-        public bool CheckUserNameAndPassword(string username, string password)
+        #region CONSTRUCTORS
+
+        public string UserName
         {
-            return;
-        }        
-        public string GetShortUserString()
-        {
-            return;
+            get { return username; }
         }
-        public void AddRating(int rating)
+        public string Password
+        {
+            get { return password; }
+        }
+        public string FirstName
+        {
+            get { return firstName; }
+        }
+        public string LastName
+        {
+            get { return lastName; }
+        }
+
+        #endregion
+
+
+
+
+        /*public bool CheckUserNameAndPassword(string username, string password)
         {
             
-        }
-        public string GetFullUserString()
+        }*/
+        /*public string GetShortUserString()
         {
-            return;
-        }
+            
+        }*/
+        /*public void AddRating(int rating)
+        {
+            
+        }*/
+        /*public string GetFullUserString()
+        {            
+
+        }*/
     }
 }

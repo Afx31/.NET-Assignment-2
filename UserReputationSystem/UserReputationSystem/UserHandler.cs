@@ -9,26 +9,42 @@ namespace UserReputationSystem
 {
     class UserHandler
     {
-        //private List<T>; of User objects
-        //private User loggedInUser;
-        //public User LoggedInUser;
+        //private List<User> users;
+        public List<string> users = new List<string>();
+        private User loggedInUser;
+        public User LoggedInUser;
 
-        public bool LoadAllUsers()
+        /*public UserHandler()     //think its stored in here?
         {
-            StreamReader srAdmin = new StreamReader(@"D:\Desktop\.NET Assignment 2\UserReputationSystem\UserReputationSystem\bin\Debug\Admin.txt");
+            users = new List<User>();
+        }*/
+        public void LoadAllUsers()
+        {
+            string adminFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Admin.txt";
+            
+            using (var reader = new StreamReader(adminFilePath))
             {
-                while (!srAdmin.EndOfStream)
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    //LOAD EMPLOYEES
+                    users.Add(line);
                 }
             }
 
-            /*StreamReader srGuest = new StreamReader(@"D:\Desktop\.NET Assignment 2\UserReputationSystem\UserReputationSystem\bin\Debug\Guests.txt");
+            /*StreamReader srAdmin = new StreamReader(adminFilePath);
+            User _user = new User();
+            while (!srAdmin.EndOfStream)
             {
+                //LOAD EMPLOYEES
+                //_user = new User();                    
+                users.Add(_user);
 
+                //possible functions to call
+                //_user.LoadEmployee(srAdmin);
             }*/
 
 
+            //srAdmin.Close();     //passes 'true' value            
         }
 
         /*public bool SaveAllUsers()

@@ -1,0 +1,10 @@
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.csprojResolveAssemblyReference.cache
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.LoginForm.resources
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.Properties.Resources.resources
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.csproj.GenerateResource.Cache
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.csproj.CoreCompileInputs.cache
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\UserReputationSystem.exe.config
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\UserReputationSystem.exe
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\UserReputationSystem.pdb
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.exe
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.pdb

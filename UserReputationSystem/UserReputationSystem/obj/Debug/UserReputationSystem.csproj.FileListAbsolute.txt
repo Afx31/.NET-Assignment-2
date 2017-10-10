@@ -8,3 +8,5 @@ D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bi
 D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\UserReputationSystem.pdb
 D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.exe
 D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.pdb
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.NewUserForm.resources
+D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.UserListScreen.resources

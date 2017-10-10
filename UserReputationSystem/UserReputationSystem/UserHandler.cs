@@ -9,47 +9,30 @@ namespace UserReputationSystem
 {
     class UserHandler
     {
-        //static ??
-        //private List<string> users = new List<string>();
         //change to private
-        public List<User> users;
+        public List<Guest> userList = new List<Guest>();
 
-
-        //private User loggedInUser;
-        //public User LoggedInUser;
-
-        public UserHandler()     //think its stored in here?
-        {
-            users = new List<User>();
-        }
         public void LoadAllUsers()
         {
-            string adminFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Admin.txt";
-            User _user = new User();            
+            string guestFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Guests.txt";
+            
+            string line;
+            StreamReader srGuest = new StreamReader(guestFilePath);
 
-            StreamReader srAdmin = new StreamReader(adminFilePath);
-            while (!srAdmin.EndOfStream)
+            while ((line = srGuest.ReadLine()) != null)
             {
-                //LOAD EMPLOYEES                   
-                users.Add(_user);                
+                string[] temp = line.Split(',');
+                userList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
+                    Convert.ToDouble(temp[6])));
+
+                //User user = new User() { UserName = temp[0], Password = temp[1], FirstName = temp[2], LastName = temp[3],
+                //    Date = temp[4], RatingsCount = Convert.ToInt32(temp[5]), AverageRating = Convert.ToDouble(temp[6]) };                
             }
-            srAdmin.Close();     //passes 'true' value  
-
-            /*using (var reader = new StreamReader(adminFilePath))
+            srGuest.Close();
+            foreach (Guest guest in userList)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    //users.Add(line);
-                }
-            }*/
+                Console.WriteLine(guest.FirstName);
+            }
         }
-
-        /*public bool SaveAllUsers()
-        {
-            //return;
-        }*/
-
-
     }
 }

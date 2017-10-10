@@ -16,17 +16,12 @@ namespace UserReputationSystem
         {
             InitializeComponent();
         }
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            UserHandler pls = new UserHandler();
-            User eh = new User();
-
-            pls.LoadAllUsers();            
-            listBox1.DataSource = pls.users;
-
+            
         }
-    
-
+        
         private void bLogin_Click(object sender, EventArgs e)
         {
             LoginEnabled();
@@ -46,28 +41,24 @@ namespace UserReputationSystem
             string inputUser = tbUsername.Text;
             string inputPassword = tbPassword.Text;
 
+            UserListScreen ULS = new UserListScreen();
+            ULS.Show();
+
+
+
             //DataTable resultList = ;
-            try
+            /*try
             {
-                /*if ()
+                if ()
                 {
 
-                }*/
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Login Faile: username/password incorrect.");
-            }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bNewuser_Click(object sender, EventArgs e)
-        {
-            
+            }*/
         }
     }
 }

@@ -11,49 +11,70 @@ namespace UserReputationSystem
     {
         protected string username, password, firstName, lastName;
         protected int ratingsCount;
-        public int RatingsCount;
         protected double averageRating;
-        public double AverageRating;
+
+        public int RatingsCount
+        {
+            get { return ratingsCount; }
+        }
+        public double AverageRating
+        {
+            get { return averageRating; }
+        }
+
 
         #region CONSTRUCTORS
+        /*public Guest(string Username, string Password, string FirstName, string LastName, DateTime DateofBirth, int RatingsCount, float AverageRating)
+        {
+            this.username = Username;
+            this.password = Password;
+            this.firstName = FirstName;
+            this.lastName = LastName;
+            this.dateOfBirth = DateofBirth;
+            this.ratingsCount = RatingsCount;
+            this.averageRating = AverageRating;
+        }
+
+        
 
         public string UserName
         {
             get { return username; }
+            set { username = value; }
         }
         public string Password
         {
             get { return password; }
+            set { password = value; }
         }
         public string FirstName
         {
             get { return firstName; }
+            set { firstName = value; }
         }
         public string LastName
         {
             get { return lastName; }
+            set { lastName = value; }
         }
-
-        #endregion
-
-
-
-
-        /*public bool CheckUserNameAndPassword(string username, string password)
+        public string Date
         {
-            
-        }*/
-        /*public string GetShortUserString()
+            get { return date; }
+            set { date = value; }
+        }
+        public int RatingsCount
         {
-            
-        }*/
-        /*public void AddRating(int rating)
+            get { return ratingsCount; }
+            //set { ratingsCount = value; }
+        }
+        public double AverageRating
         {
-            
-        }*/
-        /*public string GetFullUserString()
-        {            
+            get { return averageRating; }
+            //set { averageRating = value; }
+        }
+        */
+        #endregion  //not sure if meant to be here
 
-        }*/
+        
     }
 }

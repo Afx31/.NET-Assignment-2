@@ -9,6 +9,7 @@ namespace UserReputationSystem
 {
     class User
     {
+        //protected
         protected string username, password, firstName, lastName;
         protected int ratingsCount;
         protected double averageRating;

@@ -6,24 +6,38 @@ using System.Threading.Tasks;
 
 namespace UserReputationSystem
 {
-    class Guest : User
+    class Admin : User
     {
-        private DateTime dateOfBirth;
+        public enum AdminType
+        {
+            SuperAdmin,
+            Moderator
+        }
+        private AdminType adminType;
+        private string v1;
+        private string v2;
+        private string v3;
+        private string v4;
+        private string v5;
+        private int v6;
+        private double v7;
 
-        public Guest()
+        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+        public Admin()
         {
         }
-
-        public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating)
+        public Admin(string username, string password, string firstName, string lastName, string adminType, int ratingsCount, double averageRatingAdmin)
         {
             this.username = username;
             this.password = password;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.dateOfBirth = dateOfBirth;
+            this.adminType = (AdminType)Enum.Parse(typeof(AdminType), adminType);
             this.ratingsCount = ratingsCount;
-            this.averageRating = averageRating;
+            this.averageRatingAdmin = averageRatingAdmin;
         }
+
         public string UserName
         {
             get { return username; }
@@ -44,10 +58,11 @@ namespace UserReputationSystem
             get { return lastName; }
             set { lastName = value; }
         }
-        public DateTime DateOfBirth
+        public AdminType AdminTypes
         {
-            get { return dateOfBirth; }
-            set { dateOfBirth = value; }
+            get { return adminType; }
+            set { adminType = value; }
         }
+
     }
 }

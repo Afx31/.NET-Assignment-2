@@ -37,10 +37,8 @@
             this.tbNumberRating = new System.Windows.Forms.TextBox();
             this.lblAvgRating = new System.Windows.Forms.Label();
             this.lblNumberRating = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,45 +107,24 @@
             this.lblNumberRating.TabIndex = 8;
             this.lblNumberRating.Text = "Number of Ratings:";
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(13, 162);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(373, 293);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(393, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(375, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(756, 282);
             this.dataGridView1.TabIndex = 13;
             // 
             // userHandlerBindingSource
             // 
             this.userHandlerBindingSource.DataSource = typeof(UserReputationSystem.UserHandler);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(451, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 467);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(780, 457);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblNumberRating);
             this.Controls.Add(this.lblAvgRating);
             this.Controls.Add(this.tbNumberRating);
@@ -175,9 +152,7 @@
         private System.Windows.Forms.TextBox tbNumberRating;
         private System.Windows.Forms.Label lblAvgRating;
         private System.Windows.Forms.Label lblNumberRating;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource userHandlerBindingSource;
-        private System.Windows.Forms.Button button1;
     }
 }

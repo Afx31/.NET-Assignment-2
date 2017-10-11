@@ -9,30 +9,39 @@ namespace UserReputationSystem
 {
     class UserHandler
     {
-        //change to private
-        public List<Guest> userList = new List<Guest>();
+        //make private
+        public List<Guest> guestList = new List<Guest>();
+        public List<Admin> adminList = new List<Admin>();
 
         public void LoadAllUsers()
         {
             string guestFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Guests.txt";
-            
-            string line;
+            string adminFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Admin.txt";
             StreamReader srGuest = new StreamReader(guestFilePath);
+            StreamReader srAdmin = new StreamReader(adminFilePath);
+            string line1;
+            string line2;
 
-            while ((line = srGuest.ReadLine()) != null)
+            //Load in all Guests
+            while ((line1 = srGuest.ReadLine()) != null)
             {
-                string[] temp = line.Split(',');
-                userList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
+                string[] temp = line1.Split(',');
+                guestList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
                     Convert.ToDouble(temp[6])));
-
-                //User user = new User() { UserName = temp[0], Password = temp[1], FirstName = temp[2], LastName = temp[3],
-                //    Date = temp[4], RatingsCount = Convert.ToInt32(temp[5]), AverageRating = Convert.ToDouble(temp[6]) };                
             }
             srGuest.Close();
-            foreach (Guest guest in userList)
+
+
+
+            //Load in all Admins
+            /*while ((line2 = srAdmin.ReadLine()) != null)
             {
-                Console.WriteLine(guest.FirstName);
+                string[] temp = line2.Split(',');
+                adminList.Add(new Admin(temp[0], temp[1], temp[2], temp[3], temp[4], Convert.ToInt32(temp[5]),
+                    Convert.ToDouble(temp[6])));             
             }
+            //(Admin.AdminType)Enum.Parse(typeof(Admin.AdminType), temp[4])
+            srAdmin.Close();*/
         }
     }
 }

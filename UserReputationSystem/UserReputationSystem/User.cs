@@ -9,10 +9,10 @@ namespace UserReputationSystem
 {
     class User
     {
-        //protected
-        protected string username, password, firstName, lastName;
+        public string username, password, firstName, lastName;
         protected int ratingsCount;
         protected double averageRating;
+        protected double averageRatingAdmin;
 
         public int RatingsCount
         {
@@ -22,60 +22,37 @@ namespace UserReputationSystem
         {
             get { return averageRating; }
         }
-
-
-        #region CONSTRUCTORS
-        /*public Guest(string Username, string Password, string FirstName, string LastName, DateTime DateofBirth, int RatingsCount, float AverageRating)
+        public double AverageRatingAdmin
         {
-            this.username = Username;
-            this.password = Password;
-            this.firstName = FirstName;
-            this.lastName = LastName;
-            this.dateOfBirth = DateofBirth;
-            this.ratingsCount = RatingsCount;
-            this.averageRating = AverageRating;
+            get { return averageRatingAdmin; }
         }
 
-        
+        public bool CheckUserNameAndPassword(string usr, string pass)
+        {
+            Boolean match = false;
+            UserHandler _user = new UserHandler();
+            List<Guest> tempList = new List<Guest>();
+            tempList = _user.guestList;
+            //username = "user1";
+            //password = "password123";
 
-        public string UserName
-        {
-            get { return username; }
-            set { username = value; }
+            if (usr == password)
+            {
+                if (pass == password)
+                {
+                    match = true;
+                }
+            }
+            else
+            {
+                match = false;
+            }
+            return match;
         }
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-        public string Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
-        public int RatingsCount
-        {
-            get { return ratingsCount; }
-            //set { ratingsCount = value; }
-        }
-        public double AverageRating
-        {
-            get { return averageRating; }
-            //set { averageRating = value; }
-        }
-        */
-        #endregion  //not sure if meant to be here
 
-        
+        public string GetShortUserString()
+        {
+
+        }
     }
 }

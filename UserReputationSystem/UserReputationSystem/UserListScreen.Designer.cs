@@ -39,6 +39,7 @@
             this.lblNumberRating = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -119,11 +120,21 @@
             // 
             this.userHandlerBindingSource.DataSource = typeof(UserReputationSystem.UserHandler);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(406, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "label1";
+            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 457);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblNumberRating);
             this.Controls.Add(this.lblAvgRating);
@@ -154,5 +165,6 @@
         private System.Windows.Forms.Label lblNumberRating;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource userHandlerBindingSource;
+        private System.Windows.Forms.Label label1;
     }
 }

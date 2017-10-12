@@ -14,23 +14,35 @@ namespace UserReputationSystem
         //public List<Admin> adminList = new List<Admin>();
         public List<User> userList = new List<User>();
 
+
         public void LoadAllUsers()
         {
-            string guestFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Guests.txt";
-            string adminFilePath = @"D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\bin\Debug\Admin.txt";
-            StreamReader srGuest = new StreamReader(guestFilePath);
-            StreamReader srAdmin = new StreamReader(adminFilePath);
+            StreamReader srGuest = new StreamReader(@"Guest.txt");
             string line1;
-            string line2;
 
             //Load in all Guests
-            while ((line1 = srGuest.ReadLine()) != null)
+            while (!srGuest.EndOfStream)
             {
+                line1 = srGuest.ReadLine();
                 string[] temp = line1.Split(',');
-                userList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
-                    Convert.ToDouble(temp[6])));
+                Guest g = new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),
+                    Convert.ToDouble(temp[6]));
+                userList.Add(g);
+                  //userList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
+                  //  Convert.ToDouble(temp[6])));
             }
             srGuest.Close();
+
+            /*StreamReader srGuest = new StreamReader(@"Guest.txt");
+            string line;
+            while (!srGuest.EndOfStream)
+            {
+                line = srGuest.ReadLine();
+                string[] splitString = line.Split(',');
+                Guest temp = new Guest(splitString[0], splitString[1], splitString[2], splitString[3], Convert.ToDateTime(splitString[4]), Int32.Parse(splitString[5]), float.Parse(splitString[6]));
+                userList.Add(temp);
+            }
+            srGuest.Close();*/
 
             /*foreach (User user in userList)
             {

@@ -10,9 +10,9 @@ namespace UserReputationSystem
     {
         private DateTime dateOfBirth;
 
-        public Guest()
+        /*public Guest()
         {
-        }
+        }*/
 
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating)
         {

@@ -7,18 +7,11 @@ using System.IO;
 
 namespace UserReputationSystem
 {
-    class User
+    public abstract class User
     {
         protected string username, password, firstName, lastName;
         protected int ratingsCount;
-        protected double averageRating;
-        protected double averageRatingAdmin;
-
-        public string Username
-        {
-            get { return username; }
-            set { username = value; }
-        }
+        protected double averageRating;        
         public int RatingsCount
         {
             get { return ratingsCount; }
@@ -27,58 +20,35 @@ namespace UserReputationSystem
         {
             get { return averageRating; }
         }
-        public double AverageRatingAdmin
+
+        public bool CheckUserNameAndPassword(string username, string password)
         {
-            get { return averageRatingAdmin; }
-        }
-
-        /*public bool CheckUserNameAndPassword(string usr, string pass)
-        {
-            Boolean match = false;
-            UserHandler _user = new UserHandler();
-            var tempList = _user.guestList;
-            //username = "user1";
-            //password = "password123";
-
-            foreach (Guest g in tempList)
+            bool match = false;
+            if (this.username == username)
             {
-                if (g.username == usr)
+                if (this.password == password)
                 {
                     match = true;
                 }
-            }
-
-            /*for (int i = 0; i < tempList.Count; i++)
-            {
-                if(tempList[i].Equals(usr))
-                {
-                    match = true;
-                }
-            }
-
-            if (usr == password)
-            {
-                if (pass == password)
-                {
-                    match = true;
-                }
-            }
-            else
-            {
-                match = false;
             }
             return match;
-        }*/
-
+        }
 
         public string GetShortUserString()
         {
-            //UserHandler uh = new UserHandler();
-            //var tempList = uh.userList.ToString();
-            string tempUsername = Username;
-            //string tempFirstName = "John";
-            //return tempUsername + "," + tempFirstName;
-            return tempUsername;
+            string tempUsername = this.username;
+            string tempFirstName = this.firstName;
+
+            string tempString = tempUsername + "," + tempFirstName;
+            return tempString;
         }
+
+        public void AddRating(int rating)
+        {
+            averageRating = (averageRating * ratingsCount + rating);
+            ratingsCount = ratingsCount + 1;
+        }
+
+        public abstract string GetFullUserString();
     }
 }

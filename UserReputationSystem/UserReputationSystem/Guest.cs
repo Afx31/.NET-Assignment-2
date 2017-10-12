@@ -10,10 +10,6 @@ namespace UserReputationSystem
     {
         private DateTime dateOfBirth;
 
-        /*public Guest()
-        {
-        }*/
-
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating)
         {
             this.username = username;
@@ -24,7 +20,7 @@ namespace UserReputationSystem
             this.ratingsCount = ratingsCount;
             this.averageRating = averageRating;
         }
-        public string lel
+        public string Username
         {
             get { return username; }
             set { username = value; }
@@ -48,6 +44,21 @@ namespace UserReputationSystem
         {
             get { return dateOfBirth; }
             set { dateOfBirth = value; }
+        }
+
+        /*public bool WriteGuestToFile(System.IO.StreamWriter file)
+        {
+
+        }*/
+
+        public override string GetFullUserString()
+        {
+            string tempFirstName = this.firstName;
+            string tempLastName = this.lastName;
+            string tempDOB = this.dateOfBirth.ToString();
+
+            string tempString = tempFirstName + "," + tempLastName + "," + tempDOB;
+            return tempString;
         }
     }
 }

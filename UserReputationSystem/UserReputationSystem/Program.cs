@@ -16,8 +16,7 @@ namespace UserReputationSystem
         {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new UserListScreen());
+            Application.Run(new LoginForm());
         }
     }
 }

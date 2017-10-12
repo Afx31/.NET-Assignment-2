@@ -12,16 +12,18 @@ namespace UserReputationSystem
 {
     public partial class LoginForm : Form
     {
+        //Jiajun's stuff, use for now but change later
+        private static UserHandler _userHandler = new UserHandler();
+        public static UserHandler getUserHandler
+        {
+            get { return _userHandler; }
+            set { _userHandler = value; }
+        }
+
+
         public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            //Load all Users
-            UserHandler _userHandler = new UserHandler();
-            _userHandler.LoadAllUsers();
         }
         
         private void bLogin_Click(object sender, EventArgs e)
@@ -35,36 +37,45 @@ namespace UserReputationSystem
             {
                 LoginEnabled();
             }
-
         }
 
         private void LoginEnabled()
-        {
+        {            
+            _userHandler.LoadAllUsers();
+
             string inputUser = tbUsername.Text;
-            string inputPassword = tbPassword.Text;
-
-            UserHandler _userHandler = new UserHandler();
-            User _user = new User();
-
-            /*Boolean success = _user.CheckUserNameAndPassword(inputUser, inputPassword);           
-
+            string inputPassword = tbPassword.Text;            
+            bool success = false;
+            
+            for (int i = 0; i < _userHandler.userList.Count() && success != true; i++)
+            {
+                success = _userHandler.userList[i].CheckUserNameAndPassword(inputUser, inputPassword);
+                /*if (success == true)
+                {
+                    _userHandler.LoggedInUser = inputUser;
+                }*/
+            }
             try
             {
                 if (success == true)
                 {
-                    MessageBox.Show("YAY");
-                    //_userHandler.Show();
+                    this.Hide();
+                    new UserListScreen().Show();
                 }
                 else
                 {
                     MessageBox.Show("Login Fail: username/password incorrect.");
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Login Fail: username/password incorrect.");
-            }*/
+            }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

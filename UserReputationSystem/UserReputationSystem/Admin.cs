@@ -13,6 +13,7 @@ namespace UserReputationSystem
             SuperAdmin,
             Moderator
         }
+        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff   
         private AdminType adminType;
         private string v1;
         private string v2;
@@ -21,12 +22,9 @@ namespace UserReputationSystem
         private string v5;
         private int v6;
         private double v7;
+        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff   
 
-        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-
-        public Admin()
-        {
-        }
+        protected double averageRatingAdmin;
         public Admin(string username, string password, string firstName, string lastName, string adminType, int ratingsCount, double averageRatingAdmin)
         {
             this.username = username;
@@ -63,6 +61,25 @@ namespace UserReputationSystem
             get { return adminType; }
             set { adminType = value; }
         }
+        public double AverageRatingAdmin
+        {
+            get { return averageRatingAdmin; }
+        }
 
+        /*public bool WriteAdminToFile(System.IO.StreamWriter file)
+        {
+
+        }*/
+
+        public override string GetFullUserString()
+        {
+            string tempUsername = this.username;
+            string tempFirstName = this.firstName;
+            string tempLastName = this.lastName;
+            string tempAdminType = this.adminType.ToString();
+
+            string tempString = this.username + "," + tempFirstName + "," + tempLastName + "," + tempAdminType;
+            return tempString;
+        }
     }
 }

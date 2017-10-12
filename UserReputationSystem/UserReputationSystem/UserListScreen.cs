@@ -20,24 +20,26 @@ namespace UserReputationSystem
 
         private void UserListScreen_Load(object sender, EventArgs e)
         {
-            UserHandler _userHandler = new UserHandler();
-            User _user = new User();
-            //Guest g = new Guest();
-            _userHandler.LoadAllUsers();
+            //UserHandler _userHandler = new UserHandler();
+            //_userHandler.LoadAllUsers();
+
             //DATAGRID            
-            /*dataGridView1.ColumnCount = 4;
-            dataGridView1.ColumnHeadersVisible = true;
+            dataGridView1.ColumnCount = 4;
+            //dataGridView1.ColumnHeadersVisible = true;
             //define column names
             dataGridView1.Columns[0].Name = "Username";
             dataGridView1.Columns[1].Name = "First Name";
             dataGridView1.Columns[2].Name = "Average Rating";
             dataGridView1.Columns[3].Name = "Number of Ratings";
-            //populate the rows*/
+            //populate the rows
 
-            //string[] tempArray = _user.GetShortUserString().Split(',');
-            //dataGridView1.Rows.Add(_user.GetShortUserString());
-            //tbUsername.Text = _userHandler.userList[0].Username;
-            label1.Text = _userHandler.userList[0].Username;
+            for (int i = 0; i < LoginForm.getUserHandler.userList.Count(); i++)
+            {
+                //string[] tempArray = _userHandler.userList[i].GetShortUserString().Split(',');
+                string[] tempArray = LoginForm.getUserHandler.userList[i].GetFullUserString().Split(',');
+                dataGridView1.Rows.Add(tempArray);
+            }
+            
 
             //dataGridView1.DataSource = _userHandler.userList;
 

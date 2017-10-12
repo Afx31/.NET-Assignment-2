@@ -24,7 +24,7 @@ namespace UserReputationSystem
             this.ratingsCount = ratingsCount;
             this.averageRating = averageRating;
         }
-        public string UserName
+        public string lel
         {
             get { return username; }
             set { username = value; }

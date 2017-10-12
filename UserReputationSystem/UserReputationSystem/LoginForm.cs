@@ -46,7 +46,7 @@ namespace UserReputationSystem
             UserHandler _userHandler = new UserHandler();
             User _user = new User();
 
-            Boolean success = _user.CheckUserNameAndPassword(inputUser, inputPassword);           
+            /*Boolean success = _user.CheckUserNameAndPassword(inputUser, inputPassword);           
 
             try
             {
@@ -64,7 +64,7 @@ namespace UserReputationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Login Fail: username/password incorrect.");
-            }
+            }*/
         }
     }
 }

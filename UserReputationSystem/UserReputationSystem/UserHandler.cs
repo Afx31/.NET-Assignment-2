@@ -10,8 +10,9 @@ namespace UserReputationSystem
     class UserHandler
     {
         //make private
-        public List<Guest> guestList = new List<Guest>();
-        public List<Admin> adminList = new List<Admin>();
+        //public List<Guest> guestList = new List<Guest>();
+        //public List<Admin> adminList = new List<Admin>();
+        public List<User> userList = new List<User>();
 
         public void LoadAllUsers()
         {
@@ -26,10 +27,16 @@ namespace UserReputationSystem
             while ((line1 = srGuest.ReadLine()) != null)
             {
                 string[] temp = line1.Split(',');
-                guestList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
+                userList.Add(new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),  
                     Convert.ToDouble(temp[6])));
             }
             srGuest.Close();
+
+            /*foreach (User user in userList)
+            {
+                Console.WriteLine(user); //Name is a property of the User class
+            }*/
+
 
 
 

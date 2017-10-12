@@ -9,11 +9,16 @@ namespace UserReputationSystem
 {
     class User
     {
-        public string username, password, firstName, lastName;
+        protected string username, password, firstName, lastName;
         protected int ratingsCount;
         protected double averageRating;
         protected double averageRatingAdmin;
 
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
         public int RatingsCount
         {
             get { return ratingsCount; }
@@ -27,14 +32,29 @@ namespace UserReputationSystem
             get { return averageRatingAdmin; }
         }
 
-        public bool CheckUserNameAndPassword(string usr, string pass)
+        /*public bool CheckUserNameAndPassword(string usr, string pass)
         {
             Boolean match = false;
             UserHandler _user = new UserHandler();
-            List<Guest> tempList = new List<Guest>();
-            tempList = _user.guestList;
+            var tempList = _user.guestList;
             //username = "user1";
             //password = "password123";
+
+            foreach (Guest g in tempList)
+            {
+                if (g.username == usr)
+                {
+                    match = true;
+                }
+            }
+
+            /*for (int i = 0; i < tempList.Count; i++)
+            {
+                if(tempList[i].Equals(usr))
+                {
+                    match = true;
+                }
+            }
 
             if (usr == password)
             {
@@ -48,11 +68,17 @@ namespace UserReputationSystem
                 match = false;
             }
             return match;
-        }
+        }*/
+
 
         public string GetShortUserString()
         {
-
+            //UserHandler uh = new UserHandler();
+            //var tempList = uh.userList.ToString();
+            string tempUsername = Username;
+            //string tempFirstName = "John";
+            //return tempUsername + "," + tempFirstName;
+            return tempUsername;
         }
     }
 }

@@ -19,14 +19,15 @@ namespace UserReputationSystem
             get { return _userHandler; }
             set { _userHandler = value; }
         }
+        /// /////////////////////////////////////////////////////////////
 
 
         public LoginForm()
         {
             InitializeComponent();
         }
-        
-        private void bLogin_Click(object sender, EventArgs e)
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             LoginEnabled();
         }
@@ -71,6 +72,12 @@ namespace UserReputationSystem
             {
                 MessageBox.Show("Login Fail: username/password incorrect.");
             }
+        }
+
+        private void btnNewuser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new NewUserForm().Show();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace UserReputationSystem
 
         public void AddRating(int rating)
         {
-            averageRating = (averageRating * ratingsCount + rating);
+            averageRating = (averageRating * ratingsCount + rating) / (1 + ratingsCount);
             ratingsCount = ratingsCount + 1;
         }
 

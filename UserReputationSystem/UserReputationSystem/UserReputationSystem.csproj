@@ -70,6 +70,12 @@
     <Compile Include="UserListScreen.Designer.cs">
       <DependentUpon>UserListScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserRatingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRatingDialog.Designer.cs">
+      <DependentUpon>UserRatingDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="UserListScreen.resx">
       <DependentUpon>UserListScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserRatingDialog.resx">
+      <DependentUpon>UserRatingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\UserHandler.datasource" />
     <None Include="Properties\Settings.settings">

@@ -23,26 +23,42 @@ namespace UserReputationSystem
             //UserHandler _userHandler = new UserHandler();
             //_userHandler.LoadAllUsers();
 
-            //DATAGRID            
+            //dataGridView implementation            
             dataGridView1.ColumnCount = 4;
-            //dataGridView1.ColumnHeadersVisible = true;
             //define column names
             dataGridView1.Columns[0].Name = "Username";
             dataGridView1.Columns[1].Name = "First Name";
             dataGridView1.Columns[2].Name = "Average Rating";
             dataGridView1.Columns[3].Name = "Number of Ratings";
-            //populate the rows
+            //check box column implementation
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            dataGridView1.Columns.Add(checkBoxColumn);
+            checkBoxColumn.HeaderText = "Provide Rating to User(s)";
+            //
 
+            //populate the rows
             for (int i = 0; i < LoginForm.getUserHandler.userList.Count(); i++)
             {
                 //string[] tempArray = _userHandler.userList[i].GetShortUserString().Split(',');
-                string[] tempArray = LoginForm.getUserHandler.userList[i].GetFullUserString().Split(',');
-                dataGridView1.Rows.Add(tempArray);
+                string[] tempShortString = LoginForm.getUserHandler.userList[i].GetShortUserString().Split(',');
+                string tempAvgRating = LoginForm.getUserHandler.userList[i].AverageRating.ToString();
+                string tempRatingsCount = LoginForm.getUserHandler.userList[i].RatingsCount.ToString();
+
+                dataGridView1.Rows.Add(tempShortString);
+                dataGridView1.Rows[i].Cells[2].Value = tempAvgRating;
+                dataGridView1.Rows[i].Cells[3].Value = tempRatingsCount;
             }
-            
+        }
 
-            //dataGridView1.DataSource = _userHandler.userList;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void btnRateUsers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserRatingDialog().Show();
         }
     }
 }

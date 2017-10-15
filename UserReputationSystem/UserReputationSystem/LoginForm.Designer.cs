@@ -32,8 +32,8 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.bLogin = new System.Windows.Forms.Button();
-            this.bNewuser = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnNewuser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -68,32 +68,33 @@
             this.tbPassword.Size = new System.Drawing.Size(134, 20);
             this.tbPassword.TabIndex = 3;
             // 
-            // bLogin
+            // btnLogin
             // 
-            this.bLogin.Location = new System.Drawing.Point(39, 190);
-            this.bLogin.Name = "bLogin";
-            this.bLogin.Size = new System.Drawing.Size(195, 28);
-            this.bLogin.TabIndex = 4;
-            this.bLogin.Text = "Login";
-            this.bLogin.UseVisualStyleBackColor = true;
-            this.bLogin.Click += new System.EventHandler(this.bLogin_Click);
+            this.btnLogin.Location = new System.Drawing.Point(39, 190);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(195, 28);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
-            // bNewuser
+            // btnNewuser
             // 
-            this.bNewuser.Location = new System.Drawing.Point(41, 146);
-            this.bNewuser.Name = "bNewuser";
-            this.bNewuser.Size = new System.Drawing.Size(195, 28);
-            this.bNewuser.TabIndex = 5;
-            this.bNewuser.Text = "New User";
-            this.bNewuser.UseVisualStyleBackColor = true;
+            this.btnNewuser.Location = new System.Drawing.Point(41, 146);
+            this.btnNewuser.Name = "btnNewuser";
+            this.btnNewuser.Size = new System.Drawing.Size(195, 28);
+            this.btnNewuser.TabIndex = 5;
+            this.btnNewuser.Text = "New User";
+            this.btnNewuser.UseVisualStyleBackColor = true;
+            this.btnNewuser.Click += new System.EventHandler(this.btnNewuser_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 254);
-            this.Controls.Add(this.bNewuser);
-            this.Controls.Add(this.bLogin);
+            this.Controls.Add(this.btnNewuser);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -112,7 +113,7 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.Button bLogin;
-        private System.Windows.Forms.Button bNewuser;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnNewuser;
     }
 }

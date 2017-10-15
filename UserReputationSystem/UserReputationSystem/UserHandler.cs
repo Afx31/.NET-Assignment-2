@@ -20,7 +20,7 @@ namespace UserReputationSystem
 
         public void LoadAllUsers()
         {
-            StreamReader srGuest = new StreamReader(@"Guest.txt");
+            StreamReader srGuest = new StreamReader(@"Guests.txt");
             string line;
 
             //Load in all Guests
@@ -28,11 +28,20 @@ namespace UserReputationSystem
             {
                 line = srGuest.ReadLine();
                 string[] temp = line.Split(',');
-                Guest g = new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),
+                Guest _guest = new Guest(temp[0], temp[1], temp[2], temp[3], DateTime.ParseExact(temp[4], "dd-MM-yyyy", null), Convert.ToInt32(temp[5]),
                     Convert.ToDouble(temp[6]));
-                userList.Add(g);
+                userList.Add(_guest);
             }
             srGuest.Close();
         }
+
+        /*public void SaveAllUers()
+        {
+            Guest _guest = new Guest();
+            if (_guest.WriteGuestToFile(@"Guests.txt") == true)
+            {
+
+            }
+        }*/
     }
 }

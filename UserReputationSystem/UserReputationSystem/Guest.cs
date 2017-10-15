@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace UserReputationSystem
 {
     class Guest : User
     {
         private DateTime dateOfBirth;
+
+        public Guest()
+        {
+        }
 
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating)
         {
@@ -20,6 +25,7 @@ namespace UserReputationSystem
             this.ratingsCount = ratingsCount;
             this.averageRating = averageRating;
         }
+
         public string Username
         {
             get { return username; }
@@ -48,7 +54,20 @@ namespace UserReputationSystem
 
         /*public bool WriteGuestToFile(System.IO.StreamWriter file)
         {
+            UserHandler u = new UserHandler();
 
+            if (file.BaseStream != null)
+            {
+                //file.WriteLine(temp); //another possible method?
+                //file = new StreamWriter(File.OpenWrite(@"Guests.txt"));
+                File.AppendAllText(file.ToString(), string.Join(Environment.NewLine, u.userList));
+                file.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            } 
         }*/
 
         public override string GetFullUserString()

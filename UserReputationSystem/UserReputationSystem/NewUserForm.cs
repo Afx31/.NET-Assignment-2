@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,30 +24,31 @@ namespace UserReputationSystem
             new LoginForm().Show();
         }
 
-        private void NewUserForm_Load(object sender, EventArgs e)
-        {
-            /*dtPickerDOB.Format = DateTimePickerFormat.Custom;
-            dtPickerDOB.CustomFormat = "dd-MM-yyy";*/
-        }
-
         private void bSubmit_Click(object sender, EventArgs e)
         {
             string newUsername = tbUsername.Text;
             string newPassword = tbPassword.Text;
             string newFirstName = tbFirstName.Text;
             string newLastName = tbLastName.Text;
-            string newDOB = dtPickerDOB.Value.ToString("dd-MM-yyyy");
+            string newDOB = dtpDOB.Value.ToString("dd-MM-yyyy");
+            int i = 0;
 
-            if (tbUsername.Text == null || tbPassword.Text == null || tbFirstName == null || tbLastName == null || dtPickerDOB == null)
+            if (tbUsername.Text == null || tbPassword.Text == null || tbFirstName == null || tbLastName == null || dtpDOB == null)
             {
                 MessageBox.Show("Please fill in all fields.");
             }
             else
             {
-                //    newUsername + "," + newPassword + "," + newFirstName + "," + newLastName + "," + newDOB; DateTime.ParseExact(newDOB, "dd-MM-yyy", null)
-                Guest _guest = new Guest(newUsername, newPassword, newFirstName, newLastName, Convert.ToDateTime(newDOB), 0, 0);
+                //create new user and write to file
+                Guest _guest = new Guest(newUsername, newPassword, newFirstName, newLastName, DateTime.Parse(newDOB), i, i);                
+                StreamWriter file = new StreamWriter(@"Guests.txt");
+                _guest.WriteGuestToFile(file);
+                LoginForm.getUserHandler.userList.Add(_guest);
+
+                //display new user created message and close file
                 MessageBox.Show("New user created.");
-                this.Hide();
+                file.Close();
+                this.Close();
                 new LoginForm().Show();
             }
         }

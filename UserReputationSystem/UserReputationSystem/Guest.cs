@@ -58,9 +58,9 @@ namespace UserReputationSystem
 
             if (file.BaseStream != null)
             {
-                //file.WriteLine(temp); //another possible method?
-                //file = new StreamWriter(File.OpenWrite(@"Guests.txt"));
-                File.AppendAllText(file.ToString(), string.Join(Environment.NewLine, u.userList));
+                //File.AppendAllText(file.ToString(), string.Join(Environment.NewLine, u.userList));
+                string textContent = System.Environment.NewLine + username + "," + password + "," + firstName + "," + lastName + "," + dateOfBirth + "," + ratingsCount + "," + averageRating;
+                file.Write(textContent);
                 file.Close();
                 return true;
             }

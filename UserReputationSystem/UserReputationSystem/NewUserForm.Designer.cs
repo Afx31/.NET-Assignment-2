@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtPickerDOB = new System.Windows.Forms.DateTimePicker();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -146,22 +146,20 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Date of Birth:";
             // 
-            // dtPickerDOB
+            // dtpDOB
             // 
-            this.dtPickerDOB.CustomFormat = "";
-            this.dtPickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPickerDOB.Location = new System.Drawing.Point(97, 161);
-            this.dtPickerDOB.Name = "dtPickerDOB";
-            this.dtPickerDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtPickerDOB.TabIndex = 13;
-            this.dtPickerDOB.Value = new System.DateTime(2017, 10, 15, 0, 0, 0, 0);
+            this.dtpDOB.CustomFormat = "dd-MM-yyyy";
+            this.dtpDOB.Location = new System.Drawing.Point(97, 161);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpDOB.TabIndex = 13;
             // 
             // NewUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 269);
-            this.Controls.Add(this.dtPickerDOB);
+            this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -176,7 +174,6 @@
             this.Controls.Add(this.label1);
             this.Name = "NewUserForm";
             this.Text = "NewUserForm";
-            this.Load += new System.EventHandler(this.NewUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +193,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtPickerDOB;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
     }
 }

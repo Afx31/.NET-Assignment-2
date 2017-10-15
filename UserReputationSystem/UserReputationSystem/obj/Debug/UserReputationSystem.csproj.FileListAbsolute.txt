@@ -22,3 +22,4 @@ C:\Users\William\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReput
 C:\Users\William\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.exe
 C:\Users\William\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.pdb
 D:\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.UserRatingDialog.resources
+C:\Users\William\Desktop\GitHub\.NET-Assignment-2\UserReputationSystem\UserReputationSystem\obj\Debug\UserReputationSystem.UserRatingDialog.resources

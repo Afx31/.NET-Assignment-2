@@ -149,6 +149,7 @@
             // dtPickerDOB
             // 
             this.dtPickerDOB.CustomFormat = "";
+            this.dtPickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtPickerDOB.Location = new System.Drawing.Point(97, 161);
             this.dtPickerDOB.Name = "dtPickerDOB";
             this.dtPickerDOB.Size = new System.Drawing.Size(200, 20);

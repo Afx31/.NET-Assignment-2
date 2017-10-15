@@ -52,7 +52,7 @@ namespace UserReputationSystem
             set { dateOfBirth = value; }
         }
 
-        /*public bool WriteGuestToFile(System.IO.StreamWriter file)
+        public bool WriteGuestToFile(System.IO.StreamWriter file)
         {
             UserHandler u = new UserHandler();
 
@@ -68,7 +68,7 @@ namespace UserReputationSystem
             {
                 return false;
             } 
-        }*/
+        }
 
         public override string GetFullUserString()
         {

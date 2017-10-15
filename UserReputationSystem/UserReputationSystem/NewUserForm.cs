@@ -25,8 +25,8 @@ namespace UserReputationSystem
 
         private void NewUserForm_Load(object sender, EventArgs e)
         {
-            dtPickerDOB.Format = DateTimePickerFormat.Custom;
-            dtPickerDOB.CustomFormat = "dd-MM-yyy";
+            /*dtPickerDOB.Format = DateTimePickerFormat.Custom;
+            dtPickerDOB.CustomFormat = "dd-MM-yyy";*/
         }
 
         private void bSubmit_Click(object sender, EventArgs e)

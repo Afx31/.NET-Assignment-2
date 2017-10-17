@@ -18,9 +18,11 @@ namespace UserReputationSystem
             set { loggedInUser = value; }
         }
 
-        public void LoadAllUsers()
+        public bool LoadAllUsers()
         {
+            //pre-set StreamReader to the files required
             StreamReader srGuest = new StreamReader(@"Guests.txt");
+            StreamReader srAdmin = new StreamReader(@"Admin.txt");
             string line;
 
             //Load in all Guests
@@ -33,15 +35,35 @@ namespace UserReputationSystem
                 userList.Add(_guest);
             }
             srGuest.Close();
+            return true;
+        
+            while (!srAdmin.EndOfStream)
+            {
+                line = srAdmin.ReadLine();
+                string[] temp = line.Split(',');
+                Admin _admin = new Admin(temp[0], temp[1], temp[2], temp[3], temp[4], Convert.ToInt32(temp[5]), Convert.ToDouble(temp[6]));
+                userList.Add(_admin);
+            }
+            srAdmin.Close();
+            return true;
         }
 
-        /*public void SaveAllUers()
+        /*public bool SaveAllUers()
         {
-            Guest _guest = new Guest();
-            if (_guest.WriteGuestToFile(@"Guests.txt") == true)
-            {
-
-            }
+            //Guest _guest = new Guest();
+            //Admin _admin = new Admit();
+            //_guest.WriteGuestToFile(@"Guests.txt", true);
+            //_admin.WriteAdminToFile(@"Admin.txt", true);
         }*/
+
+        public string FirstLetterToUpper(string input)
+        {
+            //parses in the string which will return it after making the first letter capital
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty;
+            }
+            return char.ToUpper(input[0]) + input.Substring(1);
+        }
     }
 }

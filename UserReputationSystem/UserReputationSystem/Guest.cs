@@ -10,11 +10,9 @@ namespace UserReputationSystem
     class Guest : User
     {
         private DateTime dateOfBirth;
-
-        public Guest()
-        {
-        }
-
+        private User user;
+        private string temp;
+        
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating)
         {
             this.username = username;
@@ -25,6 +23,18 @@ namespace UserReputationSystem
             this.ratingsCount = ratingsCount;
             this.averageRating = averageRating;
         }
+
+        public Guest(User user, string temp)
+        {
+            this.user = user;
+            this.temp = temp;
+        }
+
+        public Guest()
+        {
+        }
+
+        #region GETTER's/SETTER's
 
         public string Username
         {
@@ -52,15 +62,15 @@ namespace UserReputationSystem
             set { dateOfBirth = value; }
         }
 
+        #endregion
+
         public bool WriteGuestToFile(System.IO.StreamWriter file)
         {
-            UserHandler u = new UserHandler();
-
+            //write all admins back to the admin.txt to include any changes
             if (file.BaseStream != null)
             {
-                //File.AppendAllText(file.ToString(), string.Join(Environment.NewLine, u.userList));
-                string textContent = System.Environment.NewLine + username + "," + password + "," + firstName + "," + lastName + "," + dateOfBirth + "," + ratingsCount + "," + averageRating;
-                file.Write(textContent);
+                string newGuest = "\r\n" + username + "," + password + "," + firstName + "," + lastName + "," + dateOfBirth.ToString("dd-MM-yyyy") + "," + ratingsCount + "," + averageRating;
+                file.Write(newGuest);
                 file.Close();
                 return true;
             }

@@ -11,7 +11,8 @@ namespace UserReputationSystem
     {
         protected string username, password, firstName, lastName;
         protected int ratingsCount;
-        protected double averageRating;        
+        protected double averageRating;    
+        //ratingsCount + averageRating getter's and set class seperate
         public int RatingsCount
         {
             get { return ratingsCount; }
@@ -45,8 +46,8 @@ namespace UserReputationSystem
 
         public void AddRating(int rating)
         {
-            averageRating = (averageRating * ratingsCount + rating) / (1 + ratingsCount);
             ratingsCount = ratingsCount + 1;
+            averageRating = (averageRating * ratingsCount + rating) / ratingsCount;
         }
 
         public abstract string GetFullUserString();

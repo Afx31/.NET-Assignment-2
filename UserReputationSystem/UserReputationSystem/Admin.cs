@@ -13,18 +13,8 @@ namespace UserReputationSystem
             SuperAdmin,
             Moderator
         }
-        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff   
         private AdminType adminType;
-        private string v1;
-        private string v2;
-        private string v3;
-        private string v4;
-        private string v5;
-        private int v6;
-        private double v7;
-        //wtfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff   
 
-        protected double averageRatingAdmin;
         public Admin(string username, string password, string firstName, string lastName, string adminType, int ratingsCount, double averageRatingAdmin)
         {
             this.username = username;
@@ -33,7 +23,7 @@ namespace UserReputationSystem
             this.lastName = lastName;
             this.adminType = (AdminType)Enum.Parse(typeof(AdminType), adminType);
             this.ratingsCount = ratingsCount;
-            this.averageRatingAdmin = averageRatingAdmin;
+            this.averageRating = averageRatingAdmin;
         }
 
         public string UserName
@@ -63,13 +53,24 @@ namespace UserReputationSystem
         }
         public double AverageRatingAdmin
         {
-            get { return averageRatingAdmin; }
+            get { return averageRating; }
         }
 
-        /*public bool WriteAdminToFile(System.IO.StreamWriter file)
+        public bool WriteAdminToFile(System.IO.StreamWriter file)
         {
-
-        }*/
+            //write all admins back to the admin.txt to include any changes
+            if (file.BaseStream != null)
+            {
+                string newAdmin = System.Environment.NewLine + username + "," + password + "," + firstName + "," + lastName + "," + adminType + "," + ratingsCount + "," + averageRating;
+                file.Write(newAdmin);
+                file.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public override string GetFullUserString()
         {

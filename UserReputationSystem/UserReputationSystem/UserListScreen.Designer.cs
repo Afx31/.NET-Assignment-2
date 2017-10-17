@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRateUsers = new System.Windows.Forms.Button();
+            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -42,17 +42,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(600, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 233);
             this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // userHandlerBindingSource
-            // 
-            this.userHandlerBindingSource.DataSource = typeof(UserReputationSystem.UserHandler);
             // 
             // btnRateUsers
             // 
-            this.btnRateUsers.Location = new System.Drawing.Point(245, 465);
+            this.btnRateUsers.Location = new System.Drawing.Point(226, 251);
             this.btnRateUsers.Name = "btnRateUsers";
             this.btnRateUsers.Size = new System.Drawing.Size(133, 23);
             this.btnRateUsers.TabIndex = 14;
@@ -60,11 +55,15 @@
             this.btnRateUsers.UseVisualStyleBackColor = true;
             this.btnRateUsers.Click += new System.EventHandler(this.btnRateUsers_Click);
             // 
+            // userHandlerBindingSource
+            // 
+            this.userHandlerBindingSource.DataSource = typeof(UserReputationSystem.UserHandler);
+            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 531);
+            this.ClientSize = new System.Drawing.Size(584, 285);
             this.Controls.Add(this.btnRateUsers);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserListScreen";

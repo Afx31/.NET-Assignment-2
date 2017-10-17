@@ -59,6 +59,7 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(201, 20);
             this.tbUsername.TabIndex = 1;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
             // 
             // tbPassword
             // 
@@ -66,6 +67,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(201, 20);
             this.tbPassword.TabIndex = 2;
+            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // tbFirstName
             // 
@@ -73,6 +75,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(201, 20);
             this.tbFirstName.TabIndex = 3;
+            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
             // 
             // tbLastName
             // 
@@ -80,6 +83,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(201, 20);
             this.tbLastName.TabIndex = 4;
+            this.tbLastName.TextChanged += new System.EventHandler(this.tbLastName_TextChanged);
             // 
             // bSubmit
             // 
@@ -148,8 +152,7 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.CustomFormat = "dd-MM-yyyy";
-            this.dtpDOB.Location = new System.Drawing.Point(97, 161);
+            this.dtpDOB.Location = new System.Drawing.Point(94, 159);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpDOB.TabIndex = 13;
@@ -174,6 +177,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NewUserForm";
             this.Text = "NewUserForm";
+            this.Load += new System.EventHandler(this.NewUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

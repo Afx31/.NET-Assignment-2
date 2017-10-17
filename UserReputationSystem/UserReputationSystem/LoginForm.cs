@@ -12,19 +12,22 @@ namespace UserReputationSystem
 {
     public partial class LoginForm : Form
     {
-        //Jiajun's stuff, use for now but change later
+        //doing so allows UserHandler object to be called throughout the project in the same instance as it is here
         private static UserHandler _userHandler = new UserHandler();
-        public static UserHandler getUserHandler
+        public static UserHandler UserHandler
         {
             get { return _userHandler; }
             set { _userHandler = value; }
         }
-        /// /////////////////////////////////////////////////////////////
-
 
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            _userHandler.LoadAllUsers();
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
@@ -34,6 +37,7 @@ namespace UserReputationSystem
 
         private void tbPassword_KeyDown1(object sender, KeyEventArgs e)
         {
+            //Press enter after password entered to log in
             if (e.KeyCode == Keys.Enter)
             {
                 LoginEnabled();
@@ -41,25 +45,23 @@ namespace UserReputationSystem
         }
 
         private void LoginEnabled()
-        {            
-            _userHandler.LoadAllUsers();
-
+        {                        
             string inputUser = tbUsername.Text;
             string inputPassword = tbPassword.Text;            
             bool success = false;
-            
-            for (int i = 0; i < _userHandler.userList.Count() && success != true; i++)
-            {
-                success = _userHandler.userList[i].CheckUserNameAndPassword(inputUser, inputPassword);
-                /*if (success == true)
-                {
-                    _userHandler.LoggedInUser = inputUser;
-                }*/
-            }
+            int tempCounter;
+
             try
             {
+                for (tempCounter = 0; tempCounter < _userHandler.userList.Count() && success != true; tempCounter++)
+                {
+                    //call CheckUserNameAndPassword to check if username/password is valid, then assign to LoggedInUser
+                    success = _userHandler.userList[tempCounter].CheckUserNameAndPassword(inputUser, inputPassword);                    
+                }            
                 if (success == true)
                 {
+                    
+                    _userHandler.LoggedInUser = _userHandler.userList[tempCounter];
                     this.Hide();
                     new UserListScreen().Show();
                 }
@@ -78,11 +80,6 @@ namespace UserReputationSystem
         {
             this.Hide();
             new NewUserForm().Show();
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -20,9 +20,6 @@ namespace UserReputationSystem
 
         private void UserListScreen_Load(object sender, EventArgs e)
         {
-            //UserHandler _userHandler = new UserHandler();
-            //_userHandler.LoadAllUsers();
-
             //dataGridView implementation            
             dataGridView1.ColumnCount = 4;
             //define column names
@@ -34,15 +31,13 @@ namespace UserReputationSystem
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             dataGridView1.Columns.Add(checkBoxColumn);
             checkBoxColumn.HeaderText = "Provide Rating to User(s)";
-            //
 
             //populate the rows
-            for (int i = 0; i < LoginForm.getUserHandler.userList.Count(); i++)
+            for (int i = 0; i < LoginForm.UserHandler.userList.Count(); i++)
             {
-                //string[] tempArray = _userHandler.userList[i].GetShortUserString().Split(',');
-                string[] tempShortString = LoginForm.getUserHandler.userList[i].GetShortUserString().Split(',');
-                string tempAvgRating = LoginForm.getUserHandler.userList[i].AverageRating.ToString();
-                string tempRatingsCount = LoginForm.getUserHandler.userList[i].RatingsCount.ToString();
+                string[] tempShortString = LoginForm.UserHandler.userList[i].GetShortUserString().Split(',');
+                string tempAvgRating = LoginForm.UserHandler.userList[i].AverageRating.ToString();
+                string tempRatingsCount = LoginForm.UserHandler.userList[i].RatingsCount.ToString();
 
                 dataGridView1.Rows.Add(tempShortString);
                 dataGridView1.Rows[i].Cells[2].Value = tempAvgRating;
@@ -50,15 +45,35 @@ namespace UserReputationSystem
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnRateUsers_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new UserRatingDialog().Show();
+            List<string> checkBoxUser = new List<string>();
+
+            //for loop to go through each row, then check if the checkBox has been clicked
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if ((dataGridView1.CurrentCell as DataGridViewCheckBoxCell) != null)
+                {
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        checkBoxUser.Add(i.ToString());
+                        /*bool isChecked = (bool)row.Cells[0].EditedFormattedValue;
+                        if (isChecked )
+                        {
+                            checkBoxUser.Add(i.ToString());
+                        }*/
+                    }
+                }
+            }
+            if (checkBoxUser.Count() > 0)
+            {
+                this.Hide();
+                new UserRatingDialog(checkBoxUser).Show();
+            }
+            else
+            {
+                MessageBox.Show("Error: select 1 user minimum to rate.");
+            }
         }
     }
 }
